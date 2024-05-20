@@ -1,0 +1,19 @@
+﻿@model string
+
+<h1>Desencriptar</h1>
+
+<form method="post" action="@Url.Action("Encryption", "EncriptacionControlador")">
+    <div class="form-group">
+        <label for="plainText">MENSAJE ENCRIPTADO:</label>
+        <input type="text" class="form-control" id="plainText" name="plainText">
+    </div>
+    <button type="submit" class="btn btn-primary">Encriptar</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model))
+{
+    <h2>Texto encriptado:</h2>
+    <p>@Model</p>
+}
+
+

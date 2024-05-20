@@ -1,0 +1,32 @@
+﻿@model string
+
+@{
+    ViewBag.Title = "Encrypt";
+}
+
+<h2>Encrypt</h2>
+
+<form method="post">
+    <div>
+        <label for="plainText">MENSAJE A ENCRIPTAR:</label>
+        <input type="text" name="plainText" id="plainText" />
+    </div>
+    <div>
+        <input type="submit" value="Encriptar" />
+    </div>
+</form>
+
+@if (ViewBag.EncryptedText != null)
+{
+    <div>
+        <label>MENSAJE ENCRIPTADO:</label>
+        <p>@ViewBag.EncryptedText</p>
+    </div>
+}
+
+@if (ViewBag.Error != null)
+{
+    <div>
+        <p style="color:red">@ViewBag.Error</p>
+    </div>
+}
